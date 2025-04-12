@@ -2,7 +2,7 @@
 
 A full-featured Book Store application built using the **MERN Stack** with modern tools and best practices. Users can browse and order books, while admins have full control over inventory through a dedicated dashboard.
 
-🔗 **Live Demo:** [BookStore.vercel.app](https://BookStore.vercel.com)
+🔗 **Live Demo:** [bookstorebydibyendu.vercel.app](https://bookstorebydibyendu.vercel.app/)
 
 ---
 
