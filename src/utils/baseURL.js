@@ -1,5 +1,5 @@
 function getBaseUrl() {
-    return "http://localhost:3001"
+    return "https://book-store-back-end-78tn.onrender.com"
 }
 
 export default getBaseUrl;
