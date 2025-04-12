@@ -51,6 +51,7 @@ const Navbar = () => {
           <div>
             {
               currentUser ?  <>
+              <span className='p-1 mb-2 mr-2'>{currentUser.email}</span>
               <button onClick={() => {setIsDropdownOpen(!isDropdownOpen)}}>
                 <img src={avatarImg} alt='user-avatar' className={`size-7 rounded-full ${ currentUser ? 'ring-2 ring-blue-500' : ''}`} />
               </button>

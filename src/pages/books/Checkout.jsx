@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../../context/AuthContext'
 import { useCreateOrderMutation } from "../../redux/features/order/orderApi";
 import Swal from "sweetalert2";
+import { clearCart } from "../../redux/features/cart/cartSlice";
 
 const Checkout = () => {
 
     const { cartItems } = useSelector( state => state.cart );
+    const dispatch = useDispatch();
     let totalPrice = cartItems.reduce((acc, item) => acc = acc + item.newPrice , 0).toFixed(2);
 
     const [isChecked, setIsChecked] = useState(false);
@@ -28,6 +30,7 @@ const Checkout = () => {
             name: data.name,
             email: currentUser?.email,
             address: {
+                address: data.address,
                 city: data.city,
                 country: data.country,
                 state: data.state,
@@ -48,6 +51,7 @@ const Checkout = () => {
                 confirmButtonText: "Ok!"
               })
             navigate("/orders");
+            dispatch(clearCart());
         } catch (error) {
             console.log(error);
             alert("Failed to Place Oredr try again!")
